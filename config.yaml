@@ -1,0 +1,21 @@
+# AI-LINE-Friend-Bot 設定檔
+
+system:
+  bot_name: "芯瑜"            # 機器人的名字 (用於判斷是否被 Tag 呼叫)
+  debounce_seconds: 12.0       # 收到訊息後的等待時間
+  always_reply_private: true   # 私訊是否有問必答
+  group_tag_only: false         # 【群組限制】是否開啟「僅被呼叫名字時才回覆」
+  reply_frequency_level: 2     # 【回話頻率】1:極低(高冷), 2:低(潛水), 3:中(隨緣), 4:高(話嘮)
+  summary_threshold: 20         # 【記憶總結門檻】累積幾句「未總結」對話後觸發總結 (建議正式上線設為 20，測試期設為 5)
+
+features:
+  enable_affinity: true       
+  enable_vision: false        
+  enable_rag: false            
+  shared_memory: true        # 是否開啟全域記憶匹配 (true: 會搜尋其他不在場的人的記憶)
+  rag_type: "local"           # "local" 或 "vector"
+
+api:
+  main_model: "deepseek-v4-flash" 
+  vision_model: "gpt-4o-mini" 
+  embedding_model: "gemini-embedding-002"

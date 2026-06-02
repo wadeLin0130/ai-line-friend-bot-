@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  bot:
+    build: .
+    container_name: ai_line_bot
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./.env:/app/.env                 # 掛載環境變數
+      - ./config.yaml:/app/config.yaml   # 掛載設定檔
+      - ./chroma_db:/app/chroma_db       # 持久化向量資料庫，確保重啟不會消失
+      - ./affinity.json:/app/affinity.json # 持久化好感度資料
+    restart: always

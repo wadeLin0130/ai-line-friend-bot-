@@ -74,12 +74,16 @@ docker compose -f docker.yaml up --build -d
 ├── requirements.txt
 ├── env.example
 ├── ingest.py           # （可選）資料 ingest 腳本
-├── docker.dockerfile
+├── Dockerfile
 ├── docker.yaml
+├── archive/            # 舊版迭代檔案（bot2.py, bot3.py, old.py）
 ├── affinity.json       # 執行時產生（已 gitignore）
 ├── memory_db.json      # 執行時產生（已 gitignore）
 ├── docs_db.json        # 執行時產生（已 gitignore）
-└── .github/            # Issue / PR 模板
+└── .github/            # Issue / PR 模板 + CI
+```
+
+**注意**：`pic/` 資料夾（先前 demo 圖片）與舊版 bot 檔案已移至 `archive/`，以保持主要程式碼乾淨。
 ```
 
 ## 🔧 進階設定

@@ -7,8 +7,8 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - ./.env:/app/.env                 # 掛載環境變數
+      - ./.env:/app/.env                 # 掛載環境變數（請自行建立）
       - ./config.yaml:/app/config.yaml   # 掛載設定檔
-      - ./chroma_db:/app/chroma_db       # 持久化向量資料庫，確保重啟不會消失
       - ./affinity.json:/app/affinity.json # 持久化好感度資料
+      # - ./memory_db.json:/app/memory_db.json  # 如需持久化記憶可取消註解
     restart: always
